@@ -80,7 +80,7 @@ const XModal = () => {
   };
 
   return (
-    <div>
+    <div className="modal">
       <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}>
         User Details Modal
       </h1>
