@@ -51,7 +51,7 @@ const XModal = () => {
     }
 
     if (!/^\d{10}$/.test(phone)) {
-      alert("Invalid phone number");
+      alert("Invalid phone number. Please enter a 10-digit phone number.");
       return false;
     }
 
@@ -63,7 +63,7 @@ const XModal = () => {
     const selectedDate = new Date(dob);
     const today = new Date();
     if (selectedDate > today) {
-      alert("Invalid date of birth");
+      alert("Invalid date of birth. Please enter a valid date.");
       return false;
     }
 
@@ -80,65 +80,67 @@ const XModal = () => {
   };
 
   return (
-    <div className="modal">
+    <div>
       <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}>
         User Details Modal
       </h1>
       <button onClick={() => setShowModal(true)}>Open Form</button>
 
       {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content" ref={modalRef}>
-            <h2>Fill Details</h2>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="username">Username:</label>
-              <input
-                id="username"
-                type="text"
-                value={formData.username}
-                onChange={(e) =>
-                  setFormData({ ...formData, username: e.target.value })
-                }
-                required
-              />
+        <div className="modal">
+          <div className="modal-overlay">
+            <div className="modal-content" ref={modalRef}>
+              <h2>Fill Details</h2>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="username">Username:</label>
+                <input
+                  id="username"
+                  type="text"
+                  value={formData.username}
+                  onChange={(e) =>
+                    setFormData({ ...formData, username: e.target.value })
+                  }
+                  required
+                />
 
-              <label htmlFor="email">Email Address:</label>
-              <input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                required
-              />
+                <label htmlFor="email">Email Address:</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  required
+                />
 
-              <label htmlFor="phone">Phone Number:</label>
-              <input
-                id="phone"
-                type="text"
-                value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
-                required
-              />
+                <label htmlFor="phone">Phone Number:</label>
+                <input
+                  id="phone"
+                  type="text"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  required
+                />
 
-              <label htmlFor="dob">Date of Birth:</label>
-              <input
-                id="dob"
-                type="date"
-                value={formData.dob}
-                onChange={(e) =>
-                  setFormData({ ...formData, dob: e.target.value })
-                }
-                required
-              />
+                <label htmlFor="dob">Date of Birth:</label>
+                <input
+                  id="dob"
+                  type="date"
+                  value={formData.dob}
+                  onChange={(e) =>
+                    setFormData({ ...formData, dob: e.target.value })
+                  }
+                  required
+                />
 
-              <button type="submit" className="submit-button">
-                Submit
-              </button>
-            </form>
+                <button type="submit" className="submit-button">
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       )}
