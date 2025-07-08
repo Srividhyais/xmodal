@@ -51,7 +51,7 @@ const XModal = () => {
     }
 
     if (!/^\d{10}$/.test(phone)) {
-      alert("Invalid phone number. Please enter a 10-digit phone number.");
+      alert("Invalid phone number");
       return false;
     }
 
@@ -63,7 +63,7 @@ const XModal = () => {
     const selectedDate = new Date(dob);
     const today = new Date();
     if (selectedDate > today) {
-      alert("Invalid date of birth. Please enter a valid date.");
+      alert("Invalid date of birth");
       return false;
     }
 
