@@ -80,15 +80,15 @@ const XModal = () => {
   };
 
   return (
-    <div className="modal">
+    <div>
       <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}>
         User Details Modal
       </h1>
       <button onClick={() => setShowModal(true)}>Open Form</button>
 
       {showModal && (
-        <div className="modal">
           <div className="modal-overlay">
+            <div className="modal">
             <div className="modal-content" ref={modalRef}>
               <h2>Fill Details</h2>
               <form onSubmit={handleSubmit}>
@@ -142,7 +142,7 @@ const XModal = () => {
               </form>
             </div>
           </div>
-        </div>
+          </div>
       )}
     </div>
   );
