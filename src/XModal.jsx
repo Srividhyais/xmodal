@@ -99,6 +99,7 @@ const XModal = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, username: e.target.value })
                 }
+                required
               />
 
               <label htmlFor="email">Email Address:</label>
@@ -109,6 +110,7 @@ const XModal = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                required
               />
 
               <label htmlFor="phone">Phone Number:</label>
@@ -119,6 +121,7 @@ const XModal = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
+                required
               />
 
               <label htmlFor="dob">Date of Birth:</label>
@@ -129,6 +132,7 @@ const XModal = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, dob: e.target.value })
                 }
+                required
               />
 
               <button type="submit" className="submit-button">
